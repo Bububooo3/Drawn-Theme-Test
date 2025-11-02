@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+   
+    "name": "Stencil for Drawn",
+    "version": "0.1.0",
+    "description": "Make profile pages more visually appealing",
+   
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://drawn.digifi.ca/*"],
+            "js": ["foreground.js"]
+        }
+    ],
+    "host_permissions": ["<all_urls>"],
+
+    "action" : {
+        "default_icon" : "images/icon.png"
+    },
+
+
+    "icons": {
+        "16": "images/icon.png",
+        "32": "images/icon.png",
+        "48": "images/icon.png",
+        "128":"images/icon.png"
+       }
+}
